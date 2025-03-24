@@ -1,4 +1,4 @@
-# African Leadership University Recipes Web - Random Recipe Generator
+# African Leadership University - Random Recipe Generator
 
 This project is a web application that generates random recipes using the MealDB API. It provides a user-friendly interface to discover new meal ideas, view recipe details, and explore a selection of random recipes.
 
@@ -83,7 +83,40 @@ alu-recipes-web/
 
 ## Deployment
 
-- managed to redirect the a sub domain of my .tech domain to github pages.
+- managed to redirect the a sub domain of my https://recipes-git.bruceshimwa.tech domain to github pages.
+- https://recipes.bruceshimwa.tech still doesn't work until dns caches gets update, until 48hrs or so the progress is on https://recipes-git.bruceshimwa.tech
+- i added a virtual server to my web servers to listen for https://recipes.bruceshimwa.tech domain and point to the my code's directory
+- my nginx configuration allows me to still have my resume https://bruceshimwa.tech and the recipes website on the same server.
+```
+server {
+    listen 80;
+    server_name bruceshimwa.tech www.bruceshimwa.tech;
+    error_page 404 /404.html;
+    add_header X-Served-By $hostname;
+
+    location = /404.html {
+        root /var/www/html;
+    }
+
+    location / {
+	root /home/ubuntu/alu-responsive-resume/;
+    }
+
+    location /redirect_me {
+        return 301 https://www.youtube.com/watch?v=dQw4w9WgXcQ;
+    }
+}
+
+server {
+    listen 80;
+    server_name recipes.bruceshimwa.tech;
+    add_header X-Served-By $hostname;
+
+    location / {
+        root /home/ubuntu/alu-recipe-web/;
+    }
+}
+```
 
 ## Challenges and Solutions
 
@@ -94,7 +127,7 @@ alu-recipes-web/
 ## Future Improvements
 
 -   Implement user authentication to save favorite recipes.
--   Add search functionality to find recipes by ingredients or keywords.
+-   Add search functionality to find recipes by ingredients.
 -   Improve the UI/UX with more interactive elements.
 -   Add more advanced filtering options.
 -   Add unit tests.
