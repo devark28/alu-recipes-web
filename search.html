@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Search Results</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Recipe Search Results</h1>
+    </header>
+    
+    <nav class="main-nav">
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="recipes.html">Random Recipes</a>
+        </div>
+        <div class="search-container">
+            <form id="searchForm" action="search.html" method="get">
+                <input type="text" id="searchInput" name="q" placeholder="Search recipes..." required>
+                <button type="submit" class="search-btn">Search</button>
+            </form>
+        </div>
+    </nav>
+    
+    <main>
+        <div id="searchQuery" class="search-query"></div>
+        
+        <div id="searchResults" class="recipes-list-container">
+            <div class="loading">Loading...</div>
+        </div>
+        
+        <div id="noResults" class="no-results" style="display: none;">
+            <p>No recipes found for your search. Try different keywords.</p>
+        </div>
+        
+        <div class="button-container">
+            <a href="index.html" class="btn">Back to Home</a>
+        </div>
+    </main>
+    
+    <footer>
+        <p>Powered by <a href="https://www.themealdb.com/api.php" target="_blank">TheMealDB API</a></p>
+    </footer>
+    
+    <script src="search.js"></script>
+</body>
+</html>
