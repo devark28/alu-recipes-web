@@ -1,4 +1,4 @@
-# Alu Recipes Web - Random Recipe Generator
+# African Leadership University Recipes Web - Random Recipe Generator
 
 This project is a web application that generates random recipes using the MealDB API. It provides a user-friendly interface to discover new meal ideas, view recipe details, and explore a selection of random recipes.
 
