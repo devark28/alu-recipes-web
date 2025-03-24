@@ -14,6 +14,7 @@ This project is a web application that generates random recipes using the MealDB
     -   Cooking instructions
     -   Recipe category, area, and tags
     -   Link to a YouTube tutorial (if available)
+-   **Search Recipe:** A text input on every page allows the users to find their favorite recipe by name
 -   **Responsive Design:** The application is designed to be responsive and work well on various screen sizes.
 -   **Error Handling:** The application handles API errors gracefully and displays user-friendly messages.
 
@@ -42,6 +43,8 @@ alu-recipes-web/
 ├── index.js
 ├── recipes.html
 ├── recipes.js
+├── search.html
+├── search.js
 └── styles.css
 ```
 
@@ -79,12 +82,12 @@ alu-recipes-web/
 
 ## Demo Video
 
-[Link to your demo video (e.g., YouTube, Vimeo)]
+[Link to the demo video](https://youtu.be/z8jNRqXPxak)
 
 ## Deployment
 
-- managed to redirect the a sub domain of my https://recipes-git.bruceshimwa.tech domain to github pages.
-- https://recipes.bruceshimwa.tech still doesn't work until dns caches gets update, until 48hrs or so the progress is on https://recipes-git.bruceshimwa.tech
+- managed to redirect the subdomain of my https://recipes-git.bruceshimwa.tech domain to github pages.
+- https://recipes.bruceshimwa.tech still doesn't work until dns caches gets updated. until 48hrs or so the progress is on https://recipes-git.bruceshimwa.tech
 - i added a virtual server to my web servers to listen for https://recipes.bruceshimwa.tech domain and point to the my code's directory
 - my nginx configuration allows me to still have my resume https://bruceshimwa.tech and the recipes website on the same server.
 ```
@@ -127,7 +130,7 @@ server {
 ## Future Improvements
 
 -   Implement user authentication to save favorite recipes.
--   Add search functionality to find recipes by ingredients.
+-   Improve search functionality to find recipes by ingredients not just by name.
 -   Improve the UI/UX with more interactive elements.
 -   Add more advanced filtering options.
 -   Add unit tests.
