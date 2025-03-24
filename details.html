@@ -11,6 +11,19 @@
         <h1>Recipe Details</h1>
     </header>
     
+    <nav class="main-nav">
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="recipes.html">Random Recipes</a>
+        </div>
+        <div class="search-container">
+            <form id="searchForm" action="search.html" method="get">
+                <input type="text" id="searchInput" name="q" placeholder="Search recipes..." required>
+                <button type="submit" class="search-btn">Search</button>
+            </form>
+        </div>
+    </nav>
+    
     <main>
         <div id="recipeContainer" class="recipe-details-container">
             <div class="loading">Loading...</div>
