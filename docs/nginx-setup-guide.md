@@ -5,7 +5,7 @@ This guide outlines how to set up Nginx to serve the ALU Recipes Web application
 ## Prerequisites
 
 * Nginx installed on your server.
-* The project files copied to a directory on your server. [use this guide as a reference on how to do so](https://github.com/devark28/alu-recipes-web/blob/main/docs/code-transfer.md)
+* The project files copied to a directory on your server. [use this guide as a reference on how to do so](./code-transfer.md)
 
 ## Configuration
 
