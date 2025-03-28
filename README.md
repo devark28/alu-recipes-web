@@ -39,8 +39,16 @@ This application uses the MealDB API to fetch recipe data. The following endpoin
 alu-recipes-web/
 ├── details.html
 ├── details.js
+├── docs
+│   ├── cicd-setup-guide.md
+│   ├── code-transfer.md
+│   ├── nginx-setup-guide.md
+│   ├── run-me-local.md
+│   └── run-me-webserver.md
 ├── index.html
 ├── index.js
+├── py_cicd_script.py
+├── README.md
 ├── recipes.html
 ├── recipes.js
 ├── search.html
@@ -54,9 +62,11 @@ alu-recipes-web/
 -   `recipes.js`: JavaScript logic for the 10 random recipes page.
 -   `details.html`: Page displaying detailed recipe information.
 -   `details.js`: JavaScript logic for the recipe details page.
+-   `search.html`: Page displaying recipes search results.
+-   `search.js`: JavaScript logic for the recipe search page.
 -   `styles.css`: Shared CSS styles for all pages.
 
-## Setup and Usage
+## Setup and Usage + Guide Docs
 
 1.  **Clone the Repository:**
 
@@ -75,6 +85,14 @@ alu-recipes-web/
     -   Click the "10 Random Recipes" button to view a list of 10 random recipes.
     -   Click on a recipe in the list to view its details.
 
+4. **My Generous Docs:** (in ./docs/ directory)
+
+    -   [How to run the code locally](./docs/run-me-local.md)
+    -   [How to transfer the code to the server](./docs/code-transfer.md)
+    -   [How to setup nginx for this project](./docs/nginx-setup-guide.md)
+    -   [How to run the code on your webserver](./docs/run-me-webserver.md)
+    -   [How to setup ci/cd to automate your deployments](./docs/cicd-setup-guide.md) (Bonus)
+
 ## Credits
 
 -   MealDB API: For providing the recipe data.
@@ -86,9 +104,8 @@ alu-recipes-web/
 
 ## Deployment
 
-- managed to redirect the subdomain of my https://recipes-git.bruceshimwa.tech domain to github pages.
-- https://recipes.bruceshimwa.tech still doesn't work until dns caches gets updated. until 48hrs or so the progress is on https://recipes-git.bruceshimwa.tech
-- i added a virtual server to my web servers to listen for https://recipes.bruceshimwa.tech domain and point to the my code's directory
+- https://recipes.bruceshimwa.tech points to the load balancer and distributes traffic using a round robbin algorithm.
+- i added a virtual server to my web servers to listen for https://recipes.bruceshimwa.tech domain and point to my recipes code's directory
 - my nginx configuration allows me to still have my resume https://bruceshimwa.tech and the recipes website on the same server.
 ```
 server {
@@ -140,3 +157,7 @@ server {
 ## License
 
 - [WTFPL](https://en.wikipedia.org/wiki/WTFPL)
+
+## Addendum
+
+- managed to redirect a subdomain of my domain to github pages. https://recipes-git.bruceshimwa.tech
