@@ -4,7 +4,7 @@ import subprocess
 
 class SimpleHandler(BaseHTTPRequestHandler):
     def do_POST(self):
-        if self.path == '/':
+        if self.path == '/cicd_webhook':
             try:
                 # Execute the bash script
                 result = subprocess.run(['/bin/bash', 'cicd_pull_script.sh'], capture_output=True, text=True, check=True)
