@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function fetchRecipeDetails(id) {
         recipeContainer.innerHTML = '<div class="loading">Loading...</div>';
         
-        fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
+        fetch(`https://www.themealdb.com/api/json/v1/${API_KEY}/lookup.php?i=${id}`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');

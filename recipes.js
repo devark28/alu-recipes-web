@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const fetchPromises = [];
         for (let i = 0; i < 10; i++) {
             fetchPromises.push(
-                fetch('https://www.themealdb.com/api/json/v1/1/random.php')
+                fetch(`https://www.themealdb.com/api/json/v1/${API_KEY}/random.php`)
                     .then(response => {
                         if (!response.ok) {
                             throw new Error('Network response was not ok');

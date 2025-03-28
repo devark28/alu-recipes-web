@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function fetchRandomRecipe() {
         recipeContainer.innerHTML = '<div class="loading">Loading...</div>';
         
-        fetch('https://www.themealdb.com/api/json/v1/1/random.php')
+        fetch(`https://www.themealdb.com/api/json/v1/${API_KEY}/random.php`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');

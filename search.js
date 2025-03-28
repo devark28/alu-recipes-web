@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
         searchResults.innerHTML = '<div class="loading">Loading...</div>';
         noResultsDisplay.style.display = 'none';
         
-        fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${encodeURIComponent(query)}`)
+        fetch(`https://www.themealdb.com/api/json/v1/${API_KEY}/search.php?s=${encodeURIComponent(query)}`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
