@@ -11,7 +11,8 @@ class SimpleHandler(BaseHTTPRequestHandler):
                 self.send_response(200)
                 self.send_header('Content-type', 'text/plain')
                 self.end_headers()
-                self.wfile.write(result.stdout.encode())
+                self.wfile.write(b"operation successful\n")
+                print(result.stdout, end="")
 
             except subprocess.CalledProcessError as e:
                 self.send_response(500)
