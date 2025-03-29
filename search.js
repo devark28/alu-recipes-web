@@ -10,13 +10,25 @@ document.addEventListener('DOMContentLoaded', function() {
     const urlParams = new URLSearchParams(window.location.search);
     const searchQuery = urlParams.get('q');
     
+    // Function to escape HTML special characters to prevent XSS attacks
+    function escapeHtml(text) {
+        if (!text) return '';
+        return text
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+    }
+    
     // If there's a search query, perform the search
     if (searchQuery && searchQuery.trim() !== '') {
         // Set the input value to the search query
         searchInput.value = searchQuery;
         
-        // Display the search query
-        searchQueryDisplay.innerHTML = `<h2>Search results for: "${searchQuery}"</h2>`;
+        // Display the search query with XSS protection
+        const safeSearchQuery = escapeHtml(searchQuery);
+        searchQueryDisplay.innerHTML = `<h2>Search results for: "${safeSearchQuery}"</h2>`;
         
         // Perform the search
         searchRecipes(searchQuery);
