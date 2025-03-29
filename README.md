@@ -6,7 +6,7 @@ This project is a web application that generates random recipes using the MealDB
 
 -   **Random Recipe on Load:** The home page (`index.html`) displays a random recipe when it's loaded.
 -   **Get Another Random Recipe:** A button on the home page allows users to fetch and display a new random recipe.
--   **10 Random Recipes:** A button on the home page navigates users to the `recipes.html` page, which displays 10 random recipes.
+-   **10 Random Recipes (sorting + filtering):** A button on the home page navigates users to the `recipes.html` page, which displays 10 random recipes.
 -   **Recipe Details:** Each recipe on the 10 random recipes page links to a detailed view (`details.html`).
 -   **Comprehensive Recipe Information:** The details page includes:
     -   Recipe title and image
@@ -14,7 +14,7 @@ This project is a web application that generates random recipes using the MealDB
     -   Cooking instructions
     -   Recipe category, area, and tags
     -   Link to a YouTube tutorial (if available)
--   **Search Recipe:** A text input on every page allows the users to find their favorite recipe by name
+-   **Search Recipe (with no xss):** A text input on every page allows the users to find their favorite recipe by name
 -   **Responsive Design:** The application is designed to be responsive and work well on various screen sizes.
 -   **Error Handling:** The application handles API errors gracefully and displays user-friendly messages.
 
