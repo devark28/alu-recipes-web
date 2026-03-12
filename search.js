@@ -1,3 +1,5 @@
+const API_KEY = 1;
+
 document.addEventListener('DOMContentLoaded', function() {
     // DOM elements
     const searchResults = document.getElementById('searchResults');
