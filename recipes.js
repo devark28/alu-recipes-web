@@ -86,6 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Since the free API doesn't have a randomselection endpoint,
         // we'll fetch 10 individual random recipes one by one
         const fetchPromises = [];
+        const API_KEY = 1;
         for (let i = 0; i < 10; i++) {
             fetchPromises.push(
                 fetch(`https://www.themealdb.com/api/json/v1/${API_KEY}/random.php`)
